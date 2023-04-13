@@ -21,5 +21,6 @@ if __name__ == '__main__':
         info, dict_download_photo = VK.download_photos(tokenVK, id_user, count)
     YandexDisk.upload_file_to_disk(ya, date, id_user, dict_download_photo)
 
+    os.remove('data.txt')
     with open('data.txt', 'a') as file:
         json.dump(info, file, indent=4)
